@@ -44,7 +44,18 @@ class DoublyLinkedList:
     def add_to_head(self, value):
         #create node
         new_node = ListNode(value)
-        pass
+        self.length += 1
+        #if list is empty set head and tail to new node
+        if self.head is not None and self.tail is not None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            #make link
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+            #move the head
+            
     """
     Removes the List's current head node, making the
     current head's next node the new head of the List.
@@ -97,7 +108,6 @@ class DoublyLinkedList:
     def get_max(self):
         pass
 
-<<<<<<< HEAD
-=======
 
->>>>>>> c10c61aa302b1ddcf2765bfcd74dde221ca324e3
+# DLL = DoublyLinkedList(1)
+# print("DLL: ", DLL.__len__())
