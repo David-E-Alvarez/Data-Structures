@@ -104,13 +104,12 @@ class LinkedList:
             current = current.get_next()
         return max_value
 
-LL = LinkedList()
-print(LL.add_to_tail(1))
+# LL = LinkedList()
+# print(LL.add_to_tail(1))
 
-ll = Node(1)
-ll.set_next(Node(2))
-ll.next.set_next(Node(3))
-ll.next.next.set_next(Node(4))
-ll.next.next.next.set_next(Node(5))
+# ll = Node(1)
+# ll.set_next(Node(2))
+# ll.next.set_next(Node(3))
+# ll.next.next.set_next(Node(4))
+# ll.next.next.next.set_next(Node(5))
 
-print("hello world!")
