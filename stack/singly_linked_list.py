@@ -16,6 +16,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None 
+        self.size = None
 
     def add_to_tail(self, value):
         # 1. create the Node from the value 
@@ -40,7 +41,6 @@ class LinkedList:
             self.tail.set_next(new_node)
             # 3. reassign self.tail to refer to the new Node 
             self.tail = new_node
-
     def remove_head(self):
         # if we have an empty linked list 
         if self.head is None and self.tail is None:

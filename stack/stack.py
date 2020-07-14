@@ -13,30 +13,37 @@ return elements in Last In First Out order.
 """
 class Stack:
     def __init__(self):
-        self.size = 0
-        self.storage = []
+        self.size = 0 #for array
+        #self.storage = []
+        self.storage = LinkedList()
 
-    def __len__(self):
+    def __len__(self): 
         return self.size
 
+
     def push(self, value):
-        self.storage.append(value)
-        self.size += 1 
+        # self.storage.append(value)#for array
+        self.size += 1 #for array
+        self.storage.add_to_tail(value)
 
     def pop(self):
         if self.size > 0: 
             self.size = self.size - 1
-            return self.storage.pop()
+            return self.storage.remove_tail()
         
 
 
-stack_instance = Stack()
-stack_instance.push(1)
-stack_instance.push(2)
-stack_instance.push(3)
-stack_instance.push(4)
-print("size:",stack_instance.size)
-print('len: ',stack_instance.__len__())
-stack_instance.pop()
-print('len: ',stack_instance.__len__())
-print("size:",stack_instance.size)
+
+# stack_instance = Stack()
+# stack_instance.push(1)
+# print(stack_instance.__len__())
+# stack_instance.push(2)
+# print(stack_instance.__len__())
+# stack_instance.push(2)
+# stack_instance.push(3)
+# stack_instance.push(4)
+# print("size:",stack_instance.size)
+# print('len: ',stack_instance.__len__())
+# stack_instance.pop()
+# print('len: ',stack_instance.__len__())
+# print("size:",stack_instance.size)
