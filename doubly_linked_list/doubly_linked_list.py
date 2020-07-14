@@ -117,7 +117,3 @@ class DoublyLinkedList:
     def get_max(self):
         pass
 
-DLL = DoublyLinkedList()
-DLL.add_to_tail(1)
-DLL.add_to_head(2)
-print("DLL: ", DLL.__len__())
