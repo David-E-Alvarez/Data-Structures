@@ -44,17 +44,15 @@ class DoublyLinkedList:
     def add_to_head(self, value):
         #create node
         new_node = ListNode(value)
+        print("length pre += 1")
         self.length += 1
+        print("length post += 1")
         #if list is empty set head and tail to new node
         if self.head is not None and self.tail is not None:
             self.head = new_node
             self.tail = new_node
-        else:
-            #make link
-            new_node.next = self.head
-            self.head.prev = new_node
-            self.head = new_node
-            #move the head
+            print("head: ", self.head)
+            print("tail: ", self.tail)
             
     """
     Removes the List's current head node, making the
@@ -109,5 +107,7 @@ class DoublyLinkedList:
         pass
 
 
-# DLL = DoublyLinkedList(1)
-# print("DLL: ", DLL.__len__())
+DLL = DoublyLinkedList()
+print("DLL.__len__(): ", DLL.__len__())
+DLL.add_to_head(1)
+print("DLL.__len__(): ", DLL.__len__())
