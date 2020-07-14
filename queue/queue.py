@@ -17,27 +17,27 @@ Stretch: What if you could only use instances of your Stack class to implement t
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = []
+        self.storage = LinkedList()
     
     def __len__(self):
         return self.size
 
     def enqueue(self, value):
-        self.storage.insert(self.size, value)
-        self.size += 1
+        self.size += 1 
+        self.storage.add_to_tail(value)
 
     def dequeue(self):
         if self.size > 0: 
             self.size = self.size - 1
-            return self.storage.pop(0)
+            return self.storage.remove_head()
 
-queue_instance = Queue()
-print(queue_instance.__len__())
-queue_instance.enqueue(1)
-queue_instance.enqueue(1)
-queue_instance.enqueue(1)
-print(queue_instance.__len__())
-queue_instance.dequeue()
-print(queue_instance.__len__())
+# queue_instance = Queue()
+# print(queue_instance.__len__())
+# queue_instance.enqueue(1)
+# queue_instance.enqueue(1)
+# queue_instance.enqueue(1)
+# print(queue_instance.__len__())
+# queue_instance.dequeue()
+# print(queue_instance.__len__())
 
 
