@@ -1,5 +1,3 @@
-david was here change on hp computer
-
 # Data Structures 
 
 Topics:
