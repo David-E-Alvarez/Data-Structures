@@ -7,21 +7,6 @@ class ListNode:
         self.prev = prev
         self.value = value
         self.next = next
-
-    def get_value(self):
-        return self.value
-
-    def get_prev(self):
-        return self.prev
-    
-    def set_prev(self, new_prev):
-        self.prev = new_prev
-
-    def get_next(self):
-        return self.next
-
-    def set_next(self, new_next):
-        self.next = new_next
             
 """
 Our doubly-linked list class. It holds references to 
@@ -44,15 +29,23 @@ class DoublyLinkedList:
     def add_to_head(self, value):
         #create node
         new_node = ListNode(value)
-        print("length pre += 1")
         self.length += 1
-        print("length post += 1")
         #if list is empty set head and tail to new node
-        if self.head is not None and self.tail is not None:
+        if self.head is None and self.tail is None:
             self.head = new_node
             self.tail = new_node
             print("head: ", self.head)
             print("tail: ", self.tail)
+        else:
+            self.head.prev = new_node
+            #print("self.head.prev: ", self.head.prev)
+            new_node.next = self.head
+            #print("new_node.next: ", new_node.next)
+            self.head = new_node
+            #print("self.head.value: ", self.head.value)
+            #print("self.tail.value: ", self.tail.value)
+    
+
             
     """
     Removes the List's current head node, making the
@@ -68,7 +61,18 @@ class DoublyLinkedList:
     the old tail node's next pointer accordingly.
     """
     def add_to_tail(self, value):
-        pass
+        #create node
+        new_node = ListNode(value)
+        self.length += 1
+        #if list is empty set head and tail to new node
+        if self.head is None and self.tail is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+            # print("self.tail: ", self.tail.value)
             
     """
     Removes the List's current tail node, making the 
@@ -107,7 +111,11 @@ class DoublyLinkedList:
         pass
 
 
-DLL = DoublyLinkedList()
-print("DLL.__len__(): ", DLL.__len__())
-DLL.add_to_head(1)
-print("DLL.__len__(): ", DLL.__len__())
+# DLL = DoublyLinkedList()
+# print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_head(1)
+# print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_head(2)
+# print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_tail(3)
+# print("DLL.__len__(): ", DLL.__len__())
