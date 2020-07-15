@@ -9,8 +9,10 @@ class ListNode:
         self.next = next
     
     def delete(self):
+        #checks to see if head
         if self.prev:
             self.prev.next = self.next
+        #check to see if tail
         if self.next:
             self.next.prev = self.prev
             
@@ -120,12 +122,15 @@ class DoublyLinkedList:
     """
     def delete(self, node):
         self.length -= 1
+        #if list is empty
         if self.head is None and self.tail is None:
             print("nada")
             return 
+        #if only one node
         if self.head is self.tail:
             self.head = None
             self.tail = None 
+        #checks if either head or tail
         elif node is self.head:
             self.head = self.head.next
             node.delete()
@@ -140,15 +145,16 @@ class DoublyLinkedList:
     in the List.
     """
     def get_max(self):
-        pass
+        max = self.head.value
+        #traverse and check if there is 
 
 
-# DLL = DoublyLinkedList()
-# print("DLL.__len__(): ", DLL.__len__())
-# DLL.add_to_head(1)
-# print("DLL.__len__(): ", DLL.__len__())
-# DLL.add_to_head(2)
-# print("DLL.__len__(): ", DLL.__len__())
-# DLL.add_to_tail(3)
-# print("DLL.__len__(): ", DLL.__len__())
-# DLL.remove_from_head()
+DLL = DoublyLinkedList()
+print("DLL.__len__(): ", DLL.__len__())
+DLL.add_to_head(1)
+print("DLL.__len__(): ", DLL.__len__())
+DLL.add_to_head(2)
+print("DLL.__len__(): ", DLL.__len__())
+DLL.add_to_tail(3)
+print("DLL.__len__(): ", DLL.__len__())
+DLL.remove_from_head()

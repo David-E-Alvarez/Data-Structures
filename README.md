@@ -1,6 +1,6 @@
 # Data Structures 
 
-Topics:
+Node node = new Node();Topics:
  * Singly Linked Lists
  * Queues and Stacks
  * Doubly Linked Lists
