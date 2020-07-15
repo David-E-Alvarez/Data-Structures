@@ -44,15 +44,16 @@ class DoublyLinkedList:
     def add_to_head(self, value):
         #create node
         new_node = ListNode(value)
-        print("length pre += 1")
+        print("value: ", value)
         self.length += 1
-        print("length post += 1")
         #if list is empty set head and tail to new node
         if self.head is not None and self.tail is not None:
             self.head = new_node
             self.tail = new_node
             print("head: ", self.head)
             print("tail: ", self.tail)
+        
+        
             
     """
     Removes the List's current head node, making the
