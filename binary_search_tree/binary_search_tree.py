@@ -52,11 +52,14 @@ class BSTNode:
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        if self.right:
+            return self.right.get_max()
+        else:
+            return self.value
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
-        pass
+        print('---->',self.left)
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
@@ -83,6 +86,15 @@ class BSTNode:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
-# bst_instance = BSTNode(1)
-# print("bst_instance.value: ", bst_instance.value)
-# bst_instance.insert(2)
+
+
+bst_instance = BSTNode(6)
+print("bst_instance.value: ", bst_instance.value)
+bst_instance.insert(4)
+bst_instance.insert(8)
+bst_instance.insert(3)
+bst_instance.insert(5)
+bst_instance.insert(7)
+bst_instance.insert(9)
+bst_instance.get_max()
+
