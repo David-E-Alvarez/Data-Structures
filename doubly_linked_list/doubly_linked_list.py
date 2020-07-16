@@ -107,14 +107,20 @@ class DoublyLinkedList:
     List and inserts it as the new head node of the List.
     """
     def move_to_front(self, node):
-        pass
+        if node is self.head:
+            return
+        self.delete(node)
+        self.add_to_head(node.value)
         
     """
     Removes the input node from its current spot in the 
     List and inserts it as the new tail node of the List.
     """
     def move_to_end(self, node):
-        pass
+        if node is self.tail:
+            return
+        self.delete(node)
+        self.add_to_tail(node.value)
 
     """
     Deletes the input node from the List, preserving the 
@@ -146,15 +152,24 @@ class DoublyLinkedList:
     """
     def get_max(self):
         max = self.head.value
+        current = self.head
         #traverse and check if there is 
+        while current is not None:
+            if max < current.value:
+                max = current.value
+            current = current.next
+        print("max:", max)
+        return max
 
 
-DLL = DoublyLinkedList()
-print("DLL.__len__(): ", DLL.__len__())
-DLL.add_to_head(1)
-print("DLL.__len__(): ", DLL.__len__())
-DLL.add_to_head(2)
-print("DLL.__len__(): ", DLL.__len__())
-DLL.add_to_tail(3)
-print("DLL.__len__(): ", DLL.__len__())
-DLL.remove_from_head()
+# DLL = DoublyLinkedList()
+# # print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_head(1)
+# # print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_tail(100)
+# # print("DLL.__len__(): ", DLL.__len__())
+# DLL.add_to_tail(55)
+
+# DLL.add_to_tail(101)
+# DLL.get_max()
+# print("DLL.__len__(): ", DLL.__len__())
